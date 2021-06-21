@@ -1,0 +1,12 @@
+2021-06-18 09:19:54,022 WARN org.springframework.boot.StartupInfoLogger [main] InetAddress.getLocalHost().getHostName() took 5004 milliseconds to respond. Please verify your network configuration (macOS machines may need to add entries to /etc/hosts).
+2021-06-18 09:19:59,031 INFO org.djohnson.sblogic.SblogicApplicationTests [main] Starting SblogicApplicationTests using Java 1.8.0_92 on DavejGo2.local with PID 55424 (started by dave in /Users/dave/workspace/sblogic)
+2021-06-18 09:19:59,033 INFO org.djohnson.sblogic.SblogicApplicationTests [main] No active profile set, falling back to default profiles: default
+2021-06-18 09:20:00,233 INFO org.djohnson.sblogic.SblogicApplicationTests [main] Started SblogicApplicationTests in 21.469 seconds (JVM running for 22.227)
+2021-06-18 11:13:40,774 WARN org.springframework.boot.StartupInfoLogger [main] InetAddress.getLocalHost().getHostName() took 5002 milliseconds to respond. Please verify your network configuration (macOS machines may need to add entries to /etc/hosts).
+2021-06-18 11:13:45,780 INFO org.djohnson.sblogic.SblogicApplicationTests [main] Starting SblogicApplicationTests using Java 1.8.0_92 on DavejGo2.local with PID 57858 (started by dave in /Users/dave/workspace/sblogic)
+2021-06-18 11:13:45,782 INFO org.djohnson.sblogic.SblogicApplicationTests [main] No active profile set, falling back to default profiles: default
+2021-06-18 11:13:46,853 INFO org.djohnson.sblogic.SblogicApplicationTests [main] Started SblogicApplicationTests in 21.344 seconds (JVM running for 22.167)
+2021-06-18 11:32:38,557 WARN org.springframework.boot.StartupInfoLogger [main] InetAddress.getLocalHost().getHostName() took 5005 milliseconds to respond. Please verify your network configuration (macOS machines may need to add entries to /etc/hosts).
+2021-06-18 11:32:43,566 INFO org.djohnson.sblogic.SblogicApplicationTests [main] Starting SblogicApplicationTests using Java 1.8.0_92 on DavejGo2.local with PID 58203 (started by dave in /Users/dave/workspace/sblogic)
+2021-06-18 11:32:43,568 INFO org.djohnson.sblogic.SblogicApplicationTests [main] No active profile set, falling back to default profiles: default
+2021-06-18 11:32:44,531 INFO org.djohnson.sblogic.SblogicApplicationTests [main] Started SblogicApplicationTests in 21.183 seconds (JVM running for 21.821)
