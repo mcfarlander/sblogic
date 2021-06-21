@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * UserController is the controller for CRUD functions.
+ * UserController is the controller for CRUD functions for system users.
  * 
  * @author DJohnson
  * @since 1.0
