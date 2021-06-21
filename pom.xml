@@ -58,6 +58,12 @@
     		<artifactId>derbyclient</artifactId>
 		</dependency>
 		
+		<!-- validation api -->
+		<dependency>
+		    <groupId>javax.validation</groupId>
+		    <artifactId>validation-api</artifactId>
+		</dependency>
+		
 		
 	</dependencies>
 
