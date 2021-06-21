@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<wls:weblogic-web-app 
-xmlns:wls="http://xmlns.oracle.com/weblogic/weblogic-web-app" 
-xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-xsi:schemaLocation="http://java.sun.com/xml/ns/javaee   http://java.sun.com/xml/ns/javaee/web-app_2_5.xsdc-web-app">
+<wls:weblogic-web-app xmlns:wls="http://xmlns.oracle.com/weblogic/weblogic-web-app" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee   http://java.sun.com/xml/ns/javaee/web-app_2_5.xsdc-web-app">
  
  	<wls:weblogic-version>14.1.1</wls:weblogic-version>
-    <wls:context-root>/sblogic</wls:context-root>
+    <wls:context-root>sblogic</wls:context-root>
     
     <wls:container-descriptor>
     
