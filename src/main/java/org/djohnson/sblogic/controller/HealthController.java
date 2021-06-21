@@ -6,6 +6,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -30,7 +31,7 @@ public class HealthController {
 	 * 
 	 * @return {@link HealthResult} the health status.
 	 */
-	@RequestMapping("/health")
+	@RequestMapping(value= "/health", method = RequestMethod.GET)
 	public HealthResult getHealthStatus() {
 		
 		logger.debug("getting the health service result");
