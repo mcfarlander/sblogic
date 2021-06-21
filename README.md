@@ -9,3 +9,11 @@ domain for use with this project.
 
 The project is maven-enabled. Use the build process to package a WAR. This
 can be deployed separately. From Eclipse, deploy as a virtual application.
+
+## Weblogic Logging
+The access logs and other domain related logs will be found in the 
+<install path>/<domain>/servers/AdminServer.logs directory.
+
+## Application Logging
+The application specific logs will be found starting at the root folder,
+<install path>/<domain>/<log file path>.
