@@ -26,7 +26,7 @@
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 
- 
+ 		<!--  this is still necessary for weblogic -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-tomcat</artifactId>
@@ -38,6 +38,24 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
+		</dependency>
+		
+		<!--  thymeleaf is a UI framework -->
+		<dependency>
+       		<groupId>org.springframework.boot</groupId>
+        	<artifactId>spring-boot-starter-thymeleaf</artifactId>
+    	</dependency>
+    	
+    	<!--  data i/o framework -->
+	    <dependency>
+	        <groupId>org.springframework.boot</groupId>
+	        <artifactId>spring-boot-starter-data-jpa</artifactId>
+	    </dependency>
+		
+		<!--  data persistant store -->
+		<dependency>
+    		<groupId>org.apache.derby</groupId>
+    		<artifactId>derbyclient</artifactId>
 		</dependency>
 		
 		
