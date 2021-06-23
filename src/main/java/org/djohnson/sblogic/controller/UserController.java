@@ -7,12 +7,12 @@ import org.djohnson.sblogic.repository.UserRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
 
 /**
  * UserController is the controller for CRUD functions for system users.
@@ -21,8 +21,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @since 1.0
  *
  */
-@RestController
-@RequestMapping("/api/user")
+@Controller
 public class UserController {
 	
 	private static final Logger logger = LoggerFactory.getLogger(UserController.class);
