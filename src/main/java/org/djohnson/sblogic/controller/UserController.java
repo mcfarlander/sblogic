@@ -7,6 +7,7 @@ import org.djohnson.sblogic.repository.UserRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -21,7 +22,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @since 1.0
  *
  */
-@RestController
+@Controller
 @RequestMapping("/api/user")
 public class UserController {
 	
