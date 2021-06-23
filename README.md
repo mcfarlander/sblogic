@@ -3,6 +3,18 @@ This project is a sandbox for testing and deploying spring boot services and
 servlets to Weblogic. This project was developed with, and can be executed on,
 Java 8. It is recommended to use Java 11 and above.
 
+### Java, Eclipse and MacOS 
+To recreate the development environment on macOS, install Java 11 (Oracle)
+and Eclipse 2019-09. From there, use the Eclipse Marketplace to install the
+weblogic plugin 17.3. 
+
+Add the server runtime. See the screen shots in the add_weblogic_server 
+folder.
+
+After that, add the Spring Boot plugins and any other plugins needed for
+development.
+
+
 # Weblogic
 Weblogic is a J2EE server from Oracle. As of mid-2021, the free version is
 14.1.1. It can be installed locally. Once that is accomplished, create a new
