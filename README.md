@@ -17,11 +17,19 @@ development.
 
 # Weblogic
 Weblogic is a J2EE server from Oracle. As of mid-2021, the free version is
-14.1.1. It can be installed locally. Once that is accomplished, create a new
+14.1.1. An Oracle user account is needed to download the jar that will install
+the server. It can be installed locally. Once that is accomplished, create a new
 domain for use with this project.
+
+Use the generic (largest) of the downloads. This will include the server, tools
+and example domains. Run the install from the command line like java -jar install_jar.jar.
+
+From within eclipse, create your domain. When setting up the server, run the
+domain setup wizard.
 
 The project is maven-enabled. Use the build process to package a WAR. This
 can be deployed separately. From Eclipse, deploy as a **virtual application**.
+See the screen capture of the deployment.
 
 By conventions, the tomcat-starter should be commented out in the pom. This
 will create an odd warning that "wsservercontainer cannot be cast to 
@@ -35,10 +43,13 @@ http://localhost:7001/console.
 The context root of this application is sblogic. To access, use
 http://localhost:7001/sblogic/...
 
+Thymeleaf templates are within the project. If there is a reference
+to one, the correct context root will need to be applied to the link.
+
 ### Weblogic Logging
-The access logs and other domain related logs will be found in the 
-<install path>/<domain>/servers/AdminServer.logs directory.
+The access logs and other domain related logs will be found in
+	<install path>/<domain>/servers/AdminServer.logs
 
 ### Application Logging
 The application specific logs will be found starting at the root folder,
-<install path>/<domain>/<log file path>.
+	<install path>/<domain>/<log file path>
