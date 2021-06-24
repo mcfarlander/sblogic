@@ -33,7 +33,7 @@ public class IssPositionController {
 	public String getIssPosition() {
 		
 		logger.debug("getting the position of ISS");
-		return issPositionService.getIssPosition();
+		return issPositionService.getIssPosition().toString();
 		
 	}
 	

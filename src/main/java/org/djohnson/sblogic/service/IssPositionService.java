@@ -1,5 +1,6 @@
 package org.djohnson.sblogic.service;
 
+import org.djohnson.sblogic.model.IssNow;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpHeaders;
@@ -47,14 +48,14 @@ public class IssPositionService {
 	 * 
 	 * @return the result of the public api for ISS's position.
 	 */
-	public String getIssPosition() {
+	public IssNow getIssPosition() {
 		
 		logger.debug("calling the ISS position api");
 		
-		Mono<String> result = webClient.get()
+		Mono<IssNow> result = webClient.get()
 				.uri(URL_ISS_POSITION)
 				.retrieve()
-				.bodyToMono(String.class);
+				.bodyToMono(IssNow.class);
 		
 		return result.block();
 	}
