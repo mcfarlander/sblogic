@@ -28,4 +28,9 @@ public class IssPosition {
 		this.longitude = longitude;
 	}
 	
+	@Override
+	public String toString() {
+		return "latitude: " + latitude + " , longitude: " + longitude;
+	}
+	
 }

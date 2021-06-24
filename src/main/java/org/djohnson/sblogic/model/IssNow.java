@@ -1,5 +1,7 @@
 package org.djohnson.sblogic.model;
 
+import java.util.Date;
+
 /**
  * IssNow represents the response from the querying the location of ISS.
  * 
@@ -8,6 +10,8 @@ package org.djohnson.sblogic.model;
  *
  */
 public class IssNow {
+	
+	public static final String SUCCESS = "sucess";
 	
 	private String message;
 	private long timestamp;
@@ -35,6 +39,16 @@ public class IssNow {
 	
 	public void setIss_position(IssPosition iss_position) {
 		this.iss_position = iss_position;
+	}
+	
+	@Override 
+	public String toString() {
+		
+		Date date = new Date();
+		date.setTime(timestamp * 1000);
+		
+		
+		return "message: " + message + ", time: " + date + ", " + iss_position.toString();
 	}
 	
 }
