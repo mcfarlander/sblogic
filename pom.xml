@@ -66,6 +66,12 @@
 		    <artifactId>validation-api</artifactId>
 		</dependency>
 		
+		<!-- Support for webclient, the replacement for resttemplate  -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-webflux</artifactId>
+		</dependency>
+		
 		
 	</dependencies>
 
