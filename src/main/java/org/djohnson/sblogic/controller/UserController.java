@@ -2,8 +2,10 @@ package org.djohnson.sblogic.controller;
 
 import javax.validation.Valid;
 
+import org.djohnson.sblogic.model.IssNow;
 import org.djohnson.sblogic.model.User;
 import org.djohnson.sblogic.repository.UserRepository;
+import org.djohnson.sblogic.service.IssPositionService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,10 +29,13 @@ public class UserController {
 	private static final Logger logger = LoggerFactory.getLogger(UserController.class);
 	
 	private final UserRepository userRepository;
+	
+	private final IssPositionService issPositionService;
 
     @Autowired
-    public UserController(UserRepository userRepository) {
+    public UserController(UserRepository userRepository, IssPositionService issPositionService) {
         this.userRepository = userRepository;
+        this.issPositionService= issPositionService;
     }
     
     /**
@@ -138,12 +143,19 @@ public class UserController {
     /**
      * ShowIssPosition will present a string iss-position.
      * 
+     * @param model		the model to use
      * @return the string iss-position (for thymeleaf)
      */
     @RequestMapping(value= "/iss", method = RequestMethod.GET)
-    public String showIssPosition() {
+    public String showIssPosition(Model model) {
     	
     	logger.debug("display the iss position leaf");
+
+    	IssNow issNow = issPositionService.getIssPosition();
+    	logger.debug(issNow.toString());
+    	
+    	model.addAttribute("issPosition", issNow.getIss_position());
+    	
         return "iss-position";
     }
 
