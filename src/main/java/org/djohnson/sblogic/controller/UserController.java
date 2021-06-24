@@ -150,9 +150,11 @@ public class UserController {
     public String showIssPosition(Model model) {
     	
     	logger.debug("display the iss position leaf");
-    	
+
     	IssNow issNow = issPositionService.getIssPosition();
-    	model.addAttribute("issNow", issNow);
+    	logger.debug(issNow.toString());
+    	
+    	model.addAttribute("issPosition", issNow.getIss_position());
     	
         return "iss-position";
     }
