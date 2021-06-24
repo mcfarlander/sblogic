@@ -134,5 +134,17 @@ public class UserController {
         
         return "redirect:/index";
     }
+    
+    /**
+     * ShowIssPosition will present a string iss-position.
+     * 
+     * @return the string iss-position (for thymeleaf)
+     */
+    @RequestMapping(value= "/iss", method = RequestMethod.GET)
+    public String showIssPosition() {
+    	
+    	logger.debug("display the iss position leaf");
+        return "iss-position";
+    }
 
 }
