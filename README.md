@@ -5,8 +5,9 @@ Java 8. It is recommended to use Java 11 and above.
 
 ### Java, Eclipse and MacOS 
 To recreate the development environment on macOS, install Java 11 (Oracle)
-and Eclipse 2019-09. From there, use the Eclipse Marketplace to install the
-weblogic plugin 17.3. 
+and Eclipse 2019-09 (2020-03 also works). From there, use the Eclipse Marketplace 
+to install the weblogic plugin 17.3. **Start with installing the weblogic plugin
+before updating eclipse or installing any other plugins.**
 
 Add the server runtime. See the screen shots in the add_weblogic_server 
 folder.
