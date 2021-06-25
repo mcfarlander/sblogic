@@ -58,8 +58,8 @@ to one, the correct context root will need to be applied to the link.
 
 ### Weblogic Logging
 The access logs and other domain related logs will be found in
-	<install path>/<domain>/servers/AdminServer.logs
+	`<install path>/<domain>/servers/AdminServer.logs`
 
 ### Application Logging
 The application specific logs will be found starting at the root folder,
-	<install path>/<domain>/<log file path>
+	`<install path>/<domain>/<log file path>`
