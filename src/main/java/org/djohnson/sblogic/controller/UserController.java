@@ -2,9 +2,11 @@ package org.djohnson.sblogic.controller;
 
 import javax.validation.Valid;
 
+import org.djohnson.sblogic.model.IpGeoLocation;
 import org.djohnson.sblogic.model.IssNow;
 import org.djohnson.sblogic.model.User;
 import org.djohnson.sblogic.repository.UserRepository;
+import org.djohnson.sblogic.service.IpLocationService;
 import org.djohnson.sblogic.service.IssPositionService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -31,11 +33,14 @@ public class UserController {
 	private final UserRepository userRepository;
 	
 	private final IssPositionService issPositionService;
+	
+	private final IpLocationService ipLocationService;
 
     @Autowired
-    public UserController(UserRepository userRepository, IssPositionService issPositionService) {
+    public UserController(UserRepository userRepository, IssPositionService issPositionService, IpLocationService ipLocationService) {
         this.userRepository = userRepository;
         this.issPositionService= issPositionService;
+        this.ipLocationService = ipLocationService;
     }
     
     /**
@@ -153,6 +158,9 @@ public class UserController {
 
     	IssNow issNow = issPositionService.getIssPosition();
     	logger.debug(issNow.toString());
+    	
+    	IpGeoLocation ipGeoLocation = ipLocationService.getIpPosition();
+    	logger.debug(ipGeoLocation.toString());
     	
     	model.addAttribute("issPosition", issNow.getIss_position());
     	
