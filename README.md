@@ -70,13 +70,33 @@ the server and set the parameters with the connection information. See the scree
 captures for configuration examples.
 
 Open LDAP service:
-https://www.zflexldapadministrator.com/index.php/blog/82-free-online-ldap
+https://www.forumsys.com/tutorials/integration-how-to/ldap/online-ldap-test-server/
 
-Server: www.zflexldap.com 
+LDAP Server Information (read-only access):
+
+Server: ldap.forumsys.com  
 Port: 389
 
-Bind DN: cn=ro_admin,ou=sysadmins,dc=zflexsoftware,dc=com
-Bind Password: zflexpass
+Bind DN: cn=read-only-admin,dc=example,dc=com
+Bind Password: password
+
+All user passwords are password.
+
+You may also bind to individual Users (uid) or the two Groups (ou) that include:
+
+ou=mathematicians,dc=example,dc=com
+
+riemann
+gauss
+euler
+euclid
+
+ou=scientists,dc=example,dc=com
+
+einstein
+newton
+galieleo
+tesla
 
 WebLogic configuration instructions:
 https://docs.oracle.com/en/middleware/enterprise-data-quality/12.2.1.3/secure/configuring-weblogic-use-ldap.html#GUID-E64A4A4E-C1ED-4ACE-A936-DFF2CDD9C9E7
