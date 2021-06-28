@@ -63,3 +63,25 @@ The access logs and other domain related logs will be found in
 ### Application Logging
 The application specific logs will be found starting at the root folder,
 	`<install path>/<domain>/<log file path>`
+	
+# LDAP and Weblogic
+There is an free on-line LDAP server that can be used for testing with. Launch
+the server and set the parameters with the connection information. See the screen
+captures for configuration examples.
+
+Open LDAP service:
+https://www.zflexldapadministrator.com/index.php/blog/82-free-online-ldap
+
+Server: www.zflexldap.com 
+Port: 389
+
+Bind DN: cn=ro_admin,ou=sysadmins,dc=zflexsoftware,dc=com
+Bind Password: zflexpass
+
+WebLogic configuration instructions:
+https://docs.oracle.com/en/middleware/enterprise-data-quality/12.2.1.3/secure/configuring-weblogic-use-ldap.html#GUID-E64A4A4E-C1ED-4ACE-A936-DFF2CDD9C9E7
+
+
+
+
+
