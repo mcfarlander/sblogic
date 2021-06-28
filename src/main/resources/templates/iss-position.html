@@ -19,20 +19,23 @@
     
 	    <script th:inline="javascript">
 	    
-	    	var longitude = /*[[${issPosition.longitude}]]*/ '0';
-	    	var latitude = /*[[${issPosition.latitude}]]*/ '0';
+	    	var isslongitude = /*[[${positions.issLong}]]*/ '0';
+	    	var isslatitude = /*[[${positions.issLat}]]*/ '0';
+	    	
+	    	var iplongitude = /*[[${positions.ipLong}]]*/ '0';
+	    	var iplatitude = /*[[${positions.ipLat}]]*/ '0';
 		
 	        var data = [{
 	            type: 'scattergeo',
 	            mode: 'markers+text',
 	            text: [
-	                'ISS'
+	                'ISS', "ME"
 	            ],
 	            lon: [
-	            	longitude
+	            	isslongitude, iplongitude
 	            ],
 	            lat: [
-	            	latitude
+	            	isslatitude, iplatitude
 	            ],
 	            marker: {
 	                size: 7,
@@ -44,7 +47,7 @@
 	                    width: 1
 	                }
 	            },
-	            name: 'Canadian cities',
+	            name: 'Locations',
 	            textposition: [
 	                'top right', 'top left', 'top center', 'bottom right', 'top right',
 	                'top left', 'bottom right', 'bottom left', 'top right', 'top right'

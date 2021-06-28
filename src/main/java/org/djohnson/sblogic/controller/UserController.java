@@ -2,6 +2,7 @@ package org.djohnson.sblogic.controller;
 
 import javax.validation.Valid;
 
+import org.djohnson.sblogic.model.GeoPositions;
 import org.djohnson.sblogic.model.IpGeoLocation;
 import org.djohnson.sblogic.model.IssNow;
 import org.djohnson.sblogic.model.User;
@@ -162,7 +163,13 @@ public class UserController {
     	IpGeoLocation ipGeoLocation = ipLocationService.getIpPosition();
     	logger.debug(ipGeoLocation.toString());
     	
-    	model.addAttribute("issPosition", issNow.getIss_position());
+    	GeoPositions positions = new GeoPositions();
+    	positions.setIssLong(issNow.getIss_position().getLongitude());
+    	positions.setIssLat(issNow.getIss_position().getLatitude());
+    	positions.setIpLong(ipGeoLocation.getLongitude());
+    	positions.setIpLat(ipGeoLocation.getLatitude());
+    	
+    	model.addAttribute("positions", positions);
     	
         return "iss-position";
     }
