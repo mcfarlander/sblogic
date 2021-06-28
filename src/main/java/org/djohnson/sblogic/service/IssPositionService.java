@@ -38,7 +38,7 @@ public class IssPositionService {
 		logger.debug("base ping url {}", URL_ISS_POSITION );
 		
 		this.webClient = webClientBuilder
-				.baseUrl(URL_ISS_POSITION )
+				.baseUrl(URL_ISS_POSITION)
 				.defaultHeader(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE)
 				.build();
 	}
@@ -60,6 +60,4 @@ public class IssPositionService {
 		return result.block();
 	}
 	
-	
-
 }

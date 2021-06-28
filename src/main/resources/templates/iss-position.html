@@ -19,60 +19,63 @@
     
 	    <script th:inline="javascript">
 	    
-	    	var longitude = /*[[${issPosition.longitude}]]*/ '0';
-	    	var latitude = /*[[${issPosition.latitude}]]*/ '0';
+	    	var isslongitude = /*[[${positions.issLong}]]*/ '0';
+	    	var isslatitude = /*[[${positions.issLat}]]*/ '0';
+	    	
+	    	var iplongitude = /*[[${positions.ipLong}]]*/ '0';
+	    	var iplatitude = /*[[${positions.ipLat}]]*/ '0';
 		
-        var data = [{
-            type: 'scattergeo',
-            mode: 'markers+text',
-            text: [
-                'ISS'
-            ],
-            lon: [
-            	longitude
-            ],
-            lat: [
-            	latitude
-            ],
-            marker: {
-                size: 7,
-                color: [
-                    '#bebada', '#fdb462', '#fb8072', '#d9d9d9', '#bc80bd',
-                    '#b3de69', '#8dd3c7', '#80b1d3', '#fccde5', '#ffffb3'
-                ],
-                line: {
-                    width: 1
-                }
-            },
-            name: 'Canadian cities',
-            textposition: [
-                'top right', 'top left', 'top center', 'bottom right', 'top right',
-                'top left', 'bottom right', 'bottom left', 'top right', 'top right'
-            ],
-        }];
+	        var data = [{
+	            type: 'scattergeo',
+	            mode: 'markers+text',
+	            text: [
+	                'ISS', "ME"
+	            ],
+	            lon: [
+	            	isslongitude, iplongitude
+	            ],
+	            lat: [
+	            	isslatitude, iplatitude
+	            ],
+	            marker: {
+	                size: 7,
+	                color: [
+	                    '#bebada', '#fdb462', '#fb8072', '#d9d9d9', '#bc80bd',
+	                    '#b3de69', '#8dd3c7', '#80b1d3', '#fccde5', '#ffffb3'
+	                ],
+	                line: {
+	                    width: 1
+	                }
+	            },
+	            name: 'Locations',
+	            textposition: [
+	                'top right', 'top left', 'top center', 'bottom right', 'top right',
+	                'top left', 'bottom right', 'bottom left', 'top right', 'top right'
+	            ],
+	        }];
 
-        var layout = {
-            title: 'International Space Station Position',
-            font: {
-                family: 'Droid Serif, serif',
-                size: 6
-            },
-            titlefont: {
-                size: 16
-            },
-            geo: {
-                scope: 'world',
-                showlakes: true,
-                lakecolor: '#fff',
-                showland: true,
-                landcolor: '#EAEAAE',
-                countrycolor: '#d3d3d3',
-                countrywidth: 1.5,
-                subunitcolor: '#d3d3d3'
-            }
-        };
+	        var layout = {
+	            title: 'International Space Station Position',
+	            font: {
+	                family: 'Droid Serif, serif',
+	                size: 6
+	            },
+	            titlefont: {
+	                size: 16
+	            },
+	            geo: {
+	                scope: 'world',
+	                showlakes: true,
+	                lakecolor: '#fff',
+	                showland: true,
+	                landcolor: '#EAEAAE',
+	                countrycolor: '#d3d3d3',
+	                countrywidth: 1.5,
+	                subunitcolor: '#d3d3d3'
+	            }
+	        };
 
-        Plotly.newPlot('mapDiv', data, layout);
+        	Plotly.newPlot('mapDiv', data, layout);
         
         
         </script>
