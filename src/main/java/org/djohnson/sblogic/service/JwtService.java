@@ -8,12 +8,15 @@ import com.auth0.jwt.interfaces.DecodedJWT;
 
 import java.util.Date;
 
+import org.springframework.stereotype.Service;
+
 /**
  * 
  * @author DJohnson
  * @since 1.0
  *
  */
+@Service
 public class JwtService {
 	
 	/** Default timeout of the token is 5 minutes. Set by property. */
