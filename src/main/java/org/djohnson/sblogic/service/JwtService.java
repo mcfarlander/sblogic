@@ -11,6 +11,7 @@ import java.util.Date;
 import org.springframework.stereotype.Service;
 
 /**
+ * JwtService is a class to generate and verify a token.
  * 
  * @author DJohnson
  * @since 1.0
@@ -32,15 +33,27 @@ public class JwtService {
 	private static final String JWT_ISSUER = "SBLOGIC";
 
 	/**
-	 * Generate a JWT given the inputs.
+	 * Generate a JWT given the inputs and using the default timeout.
 	 * 
 	 * @param username	the user name 
 	 * @param role		the uer's role
 	 * @return 			JWT string token
 	 */
 	public String generateJwtToken(String username, String role) {
+		return generateJwtToken(username, role, DEFAULT_EXPIRE_IN_FIVE_MINS);
+	}
+	
+	/**
+	 * Generate a JWT given the inputs.
+	 * 
+	 * @param username	the user name 
+	 * @param role		the uer's role
+	 * @param timeout	the time the token is valid, expiration time
+	 * @return 			JWT string token
+	 */
+	public String generateJwtToken(String username, String role, Long timeout) {
 		long now = new Date().getTime();
-		long expireTime = now + (DEFAULT_EXPIRE_IN_FIVE_MINS);
+		long expireTime = now + (timeout);
 		Date expireDate = new Date(expireTime);
 
 		String jwtToken = JWT.create()
