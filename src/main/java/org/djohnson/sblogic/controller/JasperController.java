@@ -1,7 +1,9 @@
 package org.djohnson.sblogic.controller;
 
 import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -9,6 +11,8 @@ import java.util.Map;
 import javax.servlet.http.HttpServletResponse;
 
 import org.djohnson.sblogic.model.JasperBean;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.util.ResourceUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -37,6 +41,12 @@ import net.sf.jasperreports.export.SimpleXlsxReportConfiguration;
 @RequestMapping("/api")
 public class JasperController {
 	
+	private static final Logger logger = LoggerFactory.getLogger(JasperController.class);
+	
+	private static final String REPORT_NAME = "jasperReport_";
+	private static final String REPORT_EXTENSION = ".xlsx";
+	private static final SimpleDateFormat formatter = new SimpleDateFormat("yyyyMMdd_HHmm");  
+	
 	/**
 	 * Generate a jasper report and set the response to download it.
 	 * 
@@ -46,6 +56,8 @@ public class JasperController {
 	 */
 	@RequestMapping(value= "/jasper", method = RequestMethod.GET)
     public void getDocument(HttpServletResponse response) throws IOException, JRException {
+		
+		logger.debug("generating jasper report");
 
 		// Get the report from the resources file. 
         String sourceFileName = ResourceUtils.getFile(ResourceUtils.CLASSPATH_URL_PREFIX + "SampleJasperReport.jasper").getAbsolutePath();
@@ -61,13 +73,20 @@ public class JasperController {
         
         // Create an exporter for excel and put the data in it
         JRXlsxExporter exporter = new JRXlsxExporter();
+        
         SimpleXlsxReportConfiguration reportConfigXLS = new SimpleXlsxReportConfiguration();
         reportConfigXLS.setSheetNames(new String[] { "sheet1" });
+        reportConfigXLS.setOnePagePerSheet(true);
+        reportConfigXLS.setRemoveEmptySpaceBetweenColumns(true);
+        reportConfigXLS.setRemoveEmptySpaceBetweenRows(true);
+       
         exporter.setConfiguration(reportConfigXLS);
         exporter.setExporterInput(new SimpleExporterInput(jasperPrint));
         exporter.setExporterOutput(new SimpleOutputStreamExporterOutput(response.getOutputStream()));
         
-        response.setHeader("Content-Disposition", "attachment;filename=jasperReport.xlsx");
+        String exportFileName = REPORT_NAME + formatter.format(new Date()) + REPORT_EXTENSION;
+        
+        response.setHeader("Content-Disposition", "attachment;filename=" + exportFileName);
         response.setContentType("application/octet-stream");
         
         exporter.exportReport();
@@ -84,7 +103,7 @@ public class JasperController {
 		for (int i = 0; i < 10; i++) {
 			JasperBean bean = new JasperBean();
 	        bean.setName("name " + i);
-	        bean.setColor("color " + 1);
+	        bean.setColor("color " + i);
 	        dataList.add(bean);
 		}
 		
