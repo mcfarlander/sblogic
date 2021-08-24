@@ -23,24 +23,43 @@ import net.sf.jasperreports.export.SimpleExporterInput;
 import net.sf.jasperreports.export.SimpleOutputStreamExporterOutput;
 import net.sf.jasperreports.export.SimpleXlsxReportConfiguration;
 
+/**
+ * JasperController provides a REST endpoint for generating a jasper report
+ * that will be downloaded as an excel file.
+ * 
+ * This example is based on https://examples.javacodegeeks.com/jasperreports-with-spring-boot/
+ * 
+ * @author DJohnson
+ * @since 1.0.0
+ *
+ */
 @RestController
 @RequestMapping("/api")
 public class JasperController {
 	
+	/**
+	 * Generate a jasper report and set the response to download it.
+	 * 
+	 * @param response			the response
+	 * @throws IOException		any IO exception
+	 * @throws JRException		any jasper report exception
+	 */
 	@RequestMapping(value= "/jasper", method = RequestMethod.GET)
     public void getDocument(HttpServletResponse response) throws IOException, JRException {
 
+		// Get the report from the resources file. 
         String sourceFileName = ResourceUtils.getFile(ResourceUtils.CLASSPATH_URL_PREFIX + "SampleJasperReport.jasper").getAbsolutePath();
         
-        List<JasperBean> dataList = new ArrayList<JasperBean>();
-        JasperBean sampleBean = new JasperBean();
-        sampleBean.setName("some name");
-        sampleBean.setColor("red");
-        dataList.add(sampleBean);
+        List<JasperBean> dataList = generateReportData();
         
+        // Create a Jasper bean collection (ie - data)
         JRBeanCollectionDataSource beanColDataSource = new JRBeanCollectionDataSource(dataList);
+        // Create some report parameters (empty)
         Map<String, Object> parameters = new HashMap<String, Object>();
+        // Fill the report from the actual template file, parameter and data
         JasperPrint jasperPrint = JasperFillManager.fillReport(sourceFileName, parameters, beanColDataSource);
+        
+        // Create an exporter for excel and put the data in it
         JRXlsxExporter exporter = new JRXlsxExporter();
         SimpleXlsxReportConfiguration reportConfigXLS = new SimpleXlsxReportConfiguration();
         reportConfigXLS.setSheetNames(new String[] { "sheet1" });
@@ -53,5 +72,23 @@ public class JasperController {
         
         exporter.exportReport();
     }
+	
+	/**
+	 * Generate a list of data points for the report.
+	 * @return a list of {@link JasperBean}
+	 */
+	private List<JasperBean> generateReportData() {
+		
+		List<JasperBean> dataList = new ArrayList<JasperBean>();
+		
+		for (int i = 0; i < 10; i++) {
+			JasperBean bean = new JasperBean();
+	        bean.setName("name " + i);
+	        bean.setColor("color " + 1);
+		}
+		
+		return dataList;
+		
+	}
 
 }

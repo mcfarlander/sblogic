@@ -1,6 +1,12 @@
 package org.djohnson.sblogic.model;
 
-
+/**
+ * JasperBean represents a simple object to use in a jasper report.
+ * 
+ * @author DJohnson
+ * @since 1.0.0
+ *
+ */
 public class JasperBean {
 
 	String name;
