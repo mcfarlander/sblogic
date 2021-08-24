@@ -44,7 +44,7 @@ public class JasperController {
 	private static final Logger logger = LoggerFactory.getLogger(JasperController.class);
 	
 	private static final String REPORT_NAME = "jasperReport_";
-	private static final String REPORT_EXTENSION = ".xslx";
+	private static final String REPORT_EXTENSION = ".xlsx";
 	private static final SimpleDateFormat formatter = new SimpleDateFormat("yyyyMMdd_HHmm");  
 	
 	/**
