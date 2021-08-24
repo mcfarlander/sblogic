@@ -85,6 +85,7 @@ public class JasperController {
 			JasperBean bean = new JasperBean();
 	        bean.setName("name " + i);
 	        bean.setColor("color " + 1);
+	        dataList.add(bean);
 		}
 		
 		return dataList;
