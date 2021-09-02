@@ -86,14 +86,6 @@
             <version>6.17.0</version>
         </dependency>
         
-        <!-- BIRT reports dependency. -->
-        <dependency>
-    		<groupId>com.innoventsolutions.birt.runtime</groupId>
-    		<artifactId>org.eclipse.birt.runtime_4.8.0-20180626</artifactId>
-    		<version>4.8.0</version>
-		</dependency>
-		
-
 		
 	</dependencies>
 
