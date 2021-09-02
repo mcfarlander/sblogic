@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html  xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="utf-8">
+		<title>Homepage</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  		<link rel="stylesheet" type="text/css" href="//use.fontawesome.com/releases/v5.7.2/css/all.css">
+  		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.6.0/mdb.min.css"/> 
+  		<link th:href="@{styles/application.css}" rel="stylesheet"/>
+	</head>
+	
+	<body>
+		<div th:replace="fragments/banner :: banner"></div>
+		<div th:replace="fragments/subheader :: subheader"></div>
+		<div th:replace="fragments/menu :: menu"></div>
+	
+	</body>
+</html>

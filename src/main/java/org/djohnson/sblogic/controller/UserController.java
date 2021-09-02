@@ -152,7 +152,7 @@ public class UserController {
      * @param model		the model to use
      * @return the string iss-position (for thymeleaf)
      */
-    @RequestMapping(value= "/iss", method = RequestMethod.GET)
+    @RequestMapping(value = "/iss", method = RequestMethod.GET)
     public String showIssPosition(Model model) {
     	
     	logger.debug("display the iss position leaf");
@@ -172,6 +172,16 @@ public class UserController {
     	model.addAttribute("positions", positions);
     	
         return "iss-position";
+    }
+    
+    /**
+     * ShowHomepage will present the view for the homepage.
+     * 
+     * @return the string homepage (for thymeleaf)
+     */
+    @RequestMapping(value ="homepage", method = RequestMethod.GET)
+    public String showHomepage() {
+    	return "homepage";
     }
 
 }

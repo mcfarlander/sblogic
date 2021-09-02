@@ -1,0 +1,112 @@
+@charset "UTF-8";
+
+.appBanner {
+	text-align: center;
+	color: white;
+	font-size: 12pt;
+	font-family: Arial Strong;
+	font-weight: bold;
+	padding: 2px;
+}
+
+.appBannerGreen {
+	background-color: MediumSeaGreen;
+}
+
+.appBannerRed {
+	background-color: #A20000;
+}
+
+.appHeading {
+	font-size: 16pt;
+}
+
+.formsHeading {
+	font-size: 20pt;
+}
+
+.versionHeading {
+	font-size: 8pt;
+}
+
+.headerDiv {
+	text-align: center;
+	background-color: black;
+	color: white;
+	display: table;
+	table-layout: fixed;
+	width: 100%;
+	padding: 0px;
+}
+
+.headerDiv > div {
+	display: inline-block;
+	vertical-align: middle;
+	display: table-cell;
+}
+
+.headerDiv > div:nth-of-type(1) {
+	text-align:left;
+}
+
+.headerDiv > div:nth-of-type(2) {
+	font-weight:bold;
+	padding-top: 2px;
+}
+
+.headerDiv > div:nth-of-type(3) {
+	text-align: right;
+	padding-top: 2px;
+	padding-right: 10px;
+	font-size: 10pt;
+}
+
+.headerDiv > div:nth-of-type(3) a {
+	text-decoration: none;
+	color: white;
+	padding: 2px;
+}
+
+.headerDiv > div:nth-of-type(3) a:hover {
+	color: #FF0000;
+}
+
+div.menu {
+	color: white;
+	border: 0px solid #565656;
+	font-family: tahoma, verdana, sans-serif;
+	font-size: 8pt;
+	font-weight:bold;
+	z-index:101;
+	background: #1667A8;
+	box-shadow: 0 5px 10px rgb(0, 0, 0, 0.2);
+	text-align: left;
+	display: inline-block;
+	position: absolute;
+	visibility: hidden;
+	opacity: 0;
+}
+
+div.top {
+	display: inline-block;
+	width: 100%;
+	position: relative !important;
+	visibility: visible;
+	opacity: 1;
+}
+
+div.top.hmb > div.item {
+	display: inline-block;
+}
+
+div.menu > div.item {
+	white-space:nowrap;
+	cursor:default;
+	padding-top: 10px;
+	padding-right: 10px;
+	padding-left: 10px;
+	padding-bottom: 10px;
+	margin: 0;
+	border-top: 2px solid transparent;
+}
+
